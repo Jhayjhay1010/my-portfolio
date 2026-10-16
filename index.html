@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayjay Berdin | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background:#E8DEFF;
+            color: #2D1B69;
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+        nav {
+            background: #2D1B69;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 7px;
+        }
+
+        nav a:hover {
+            color: #bfdbfe;
+        }
+
+        button, .button {
+            display: inline-block;
+            padding: 10px 16px;
+            border: none;
+            background: #2D1B69;
+            color: white;       
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover, .button:hover {
+            box-shadow: 0 0 15px #a78bfa, 0 0 30px #7c3aed;
+            transform: scale(1.05);
+        }
+
+        nav button {
+            background: white;
+            color: #2563eb;
+        }
+
+        section {
+            max-width: 950px;
+            margin: auto;
+            padding: 40px 25px;
+            scroll-margin-top: 65px;
+        }
+
+        h1, h2 {
+            color: #2D1B69;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 8px;
+        }
+
+        a {
+            color: #2563eb;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: #eaf2ff;
+        }
+
+        .hero section {
+            padding: 20px;
+        }
+
+        .profile {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            transition: transform 0.4s;
+        }
+
+        .profile:hover {
+            transform: scale(1.30) rotate(3deg);
+        } 
+
+        main section {
+            border-bottom: 1px solid #d7e3f4;
+        }
+
+        .project-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #d7e3f4;
+            
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-item img {
+            display: block;
+            width: 320px;
+            max-width: 100%;
+            max-height: 180px;
+            margin: 10px 0;
+            border-radius: 15px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 30px;
+            padding-left: 20px;
+        }
+
+        input, textarea {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #b8c9e6;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid #93c5fd;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background: #2D1B69;
+            color: white;
+        }
+
+        body.dark {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        .dark nav, .dark footer {
+            background: #172554;
+        }
+
+        .dark .hero {
+            background: #172033;
+        }
+
+        .dark h1, .dark h2 {
+            color: #60a5fa;
+        }
+
+        .dark a {
+            color: #60a5fa;
+        }
+
+        .dark .button {
+            color: white;
+        }
+
+        .dark main section,
+        .dark .project-item {
+            border-color: #374151;
+        }
+
+        .dark input, .dark textarea {
+            background: #1f2937;
+            color: white;
+            border-color: #64748b;
+        }
+
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 700px) {
+            nav a {
+                font-size: 13px;
+                margin: 2px;
+                padding: 5px;
+            }
+
+            section {
+                padding: 30px 18px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .profile {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto;
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+        <button onclick="changeTheme()" id="themeButton">
+            Dark Mode
+        </button>
+    </nav>
+
+    <header class="hero" id="home">
+        <section>
+            <img class="profile" src="profile2.jpg"
+                 alt="My Profile Picture">
+
+            <h1>Hi, I'm Jayjay Berdin!</h1>
+
+            <p><i>Connecting the World Through Technology.</i></p>
+
+            <p>
+                Hi! Im a college student eager to discover, learn, and explore the ever-evolving world of technology.
+            </p>
+
+            <a class="button" href="#projects">View My Projects</a>
+        </section>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                I am a student who wants to improve my programming
+                skills and learn new things. 
+            </p>
+
+            <p><b>Course:</b> ACT</p>
+            <p><b>School:</b> Datamex College of Saint Adeline</p>
+            <p><b>Hobbies:</b> Playing online games </p>
+            <p><b>Interests:</b> Modifying my Motorcycle</p>
+        </section>
+
+        <section id="skills">
+            <h2>My Skills</h2>
+
+            <ul class="skills">
+                <li>Adaptability and continuous learning</li>
+                <li>Resourceful</li>
+                <li>Time Management</li>
+                <li>Problem Solving</li>
+                <li>Teamwork</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+
+            <div class="project-item">
+                <img src="project1.jpg" alt="Personal Portfolio">
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    A website that introduces me and shows my skills.
+                </p>
+
+                <p><b>Technologies:</b> HTML and CSS</p>
+            </div>
+
+            <div class="project-item">
+                <img src="project2.jpg"
+                     alt="Payroll Management System">
+
+                <h3>Payroll Management System</h3>
+
+                <p>
+                    A system for managing employee information
+                    and calculating salaries.
+                </p>
+
+                <p><b>Technologies:</b> VB.NET and MS Access</p>
+            </div>
+
+            <div class="project-item">
+                <img src="project3.jpg"
+                     alt="Warehouse Management System">
+
+                <h3>Warehouse Management System</h3>
+
+                <p>
+                    A system for adding and updating in warehouse inventory
+                </p>
+
+                <p><b>Technologies:</b> Python</p>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>My Achievements</h2>
+
+            <ul>
+                <li>Achieved with Honors in Senior High School.</li>
+                <li>Reached Rank 2 in ORACLE.</li>
+                <li>Overall Mobile legends Champion in DCSA.</li>
+                <li>Overall MVP mobile legend champion</li>
+            </ul>
+        </section>
+
+        <section id="goals">
+            <h2>My Future Goals</h2>
+
+            <ul>
+                <li>Improve my coding skills.</li>
+                <li>Improve my coding adaptability.</li>
+                <li>Become a successful IT professional.</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+
+            <p>
+                Email:
+                <a href="Jayjaybordeos10@gmail.com">
+                    Jayjaybordeos10@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.facebook.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    Facebook
+                </a>
+            </p>
+
+            <p>
+                <a href="https://github.com/"
+                   target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </p>
+
+            <h3>Send a Message</h3>
+
+            <form onsubmit="sendMessage(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Jayjay Berdin. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function changeTheme() {
+            const isDark = document.body.classList.toggle("dark");
+
+            document.getElementById("themeButton").textContent =
+                isDark ? "Light Mode" : "Dark Mode";
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+
+            alert(
+                "Thank you for your message! " +
+                "This demo form does not send emails yet."
+            );
+
+            event.target.reset();
+        }
+    </script>
+
+</body>
+</html>
